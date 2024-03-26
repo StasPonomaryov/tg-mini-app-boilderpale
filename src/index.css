@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #8020c1;
+  --primary-color-hover: #8020c1;
+  --secondary-text-color: #a5a5a5;
+  --theme-text-color: #333;
+  --theme-bg-volor: #fff;
+  --theme-secondary-bg-color: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-text-color: #fff;
+    --theme-bg-color: rgb(24, 27, 32);
+    --theme-secondary-bg-color: rgb(56, 49, 49);
+  }
+}
+
+body {
+  background-color: var(--theme-bg-color);
+  color: var(--theme-text-color);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  position: relative;
+}
+
+.main-wrapper {
+  margin: 0 auto;
+  max-width: 390px;
+  padding: 1rem;
+  position: relative;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2 {
+  margin-bottom: 0.5rem; 
+}
