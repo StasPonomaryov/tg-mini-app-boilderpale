@@ -13,7 +13,7 @@ This template provides a minimal setup to start developing Telegram Mini App.
 ## How to start
 
 Clone this repository to your local machine:  
-`git clone https://github.com/StasPonomaryov/web-app-boilerplate.git`
+`git clone https://github.com/StasPonomaryov/tg-mini-app-boilderpale.git`
 
 Install dependencies:  
 `pnpm i`  
@@ -23,7 +23,7 @@ Edit `vite.config.ts` for `outDir` (path to build) and `base` (path to run).
 Create `.env.local`, `.env.staging`, `.env.production` files for local development\staging\production and place there some variables and put Firebase credentials there:
 ```
 VITE_APP_FAVICON_EMOJI="👑"
-VITE_APP_TITLE="Web App Boilderplate [local]"
+VITE_APP_TITLE="Telegram Mini App Boilderplate [local]"
 VITE_APP_HOME_FOLDER="/web-app"
 VITE_APP_FIREBASE_API_KEY=""
 VITE_APP_FIREBASE_AUTH_DOMAIN=""
@@ -50,7 +50,7 @@ Build production:
 
 ## How to deploy
 
-⚠️ IMPORTANT. Every your deployment will remove ALL files on Firebase hosting. Therefore, if you have multiple applications placed in subdirectories like `public/web-app`, `public/web-app-2` you'll lose all of them and only current application will be available.
+⚠️ IMPORTANT. Every your deployment will remove ALL files on Firebase hosting. Therefore, if you have multiple applications placed in subdirectories like `public/tg-mini-app`, `public/tg-mini-app-2` you'll lose all of them and only current application will be available.
 
 ⚠️ You must have `firebase-tools` installed on your machine globally
 
@@ -60,9 +60,9 @@ Create `.firebaserc` file and put there info about your projects:
 ```
 {
   "projects": {
-    "prod": "web-app",
-    "dev": "web-app-dev",
-    "default": "web-app-dev"
+    "prod": "tg-mini-app",
+    "dev": "tg-mini-app-dev",
+    "default": "tg-mini-app-dev"
   }
 }
 ```
@@ -75,8 +75,8 @@ Create `firebase.json` file and put there info about your projects' hosting:
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "/web-app/**",
-        "destination": "/web-app/index.html"
+        "source": "/tg-mini-app/**",
+        "destination": "/tg-mini-app/index.html"
       }
     ]
   }
@@ -97,8 +97,8 @@ Add to file `firebase.json` in your project this data to `hosting.rewrites` arra
 
 ```
 {
-  "source": "/web-app/**",
-  "destination": "/web-app/index.html"
+  "source": "/tg-mini-app/**",
+  "destination": "/tg-mini-app/index.html"
 }
 ```
 
