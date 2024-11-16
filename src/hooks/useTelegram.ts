@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { log } from '../lib/logger';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const tg = (window as any).Telegram?.WebApp as IWebApp;
 
 const useTelegram = () => {
   const navigate = useNavigate();
   const [isTelegram, setIsTelegram] = useState(false);
+  const onClickBackButton = useCallback(() => {
+    navigate(-1);
+  }, [navigate]);
 
   useEffect(() => {
     const checkTelegramApp = () => {
@@ -32,15 +35,12 @@ const useTelegram = () => {
 
   function onClose() {
     tg.close();
-  };
-
-  function onClickBackButton() {
-    navigate(-1);
-  };
+  }
+ 
 
   function onWarning(message: string) {
     tg.showAlert(message);
-  };
+  }
 
   function onConfirm(message: string, callback?: unknown) {
     tg.showConfirm(message, callback);
